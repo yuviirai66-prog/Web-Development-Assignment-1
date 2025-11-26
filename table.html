@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table Example</title>
+    <style>
+        /* General page and text styling */
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        /* Main table container styling */
+        .game-table {
+            border-collapse: collapse; /* Merges cell borders for a clean look */
+        }
+
+        /* General styling for all cells (td) */
+        .game-table td {
+            width: 55px;
+            height: 55px;
+            border: 1px solid black;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        /* Specific styling for the text label cells in the first column */
+        .game-table .label {
+            border: none; /* Removes all borders from label cells */
+            text-align: right;
+            padding-right: 15px;
+            font-size: 14px;
+            width: auto; /* Allows the cell to size based on its content */
+            white-space: nowrap; /* Prevents the text from wrapping */
+        }
+
+        /* Adds a thick bottom border to cells in the 2nd and 4th rows */
+        .game-table .row-2 td:not(.label),
+        .game-table .row-4 td:not(.label) {
+            border-bottom: 3px solid black;
+        }
+
+        /* Removes the top border from cells in the 3rd and 5th rows to prevent double borders */
+        .game-table .row-3 td:not(.label),
+        .game-table .row-5 td:not(.label) {
+            border-top: none;
+        }
+
+        /* Styling for the SVG circles */
+        .circle {
+            width: 40px;
+            height: 40px;
+            display: block; /* Ensures proper alignment within the cell */
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Create a Table which looks like this 👇</h1>
+    <a href="index.html">Go back to Home Page</a>
+    <br><br>
+    
+    <!-- SVG definitions for reusable shapes -->
+    <svg width="0" height="0" style="position:absolute;">
+        <defs>
+            <circle id="white-circle" cx="20" cy="20" r="19" fill="white" stroke="black" stroke-width="1"/>
+            <circle id="black-circle" cx="20" cy="20" r="19" fill="black" stroke="black" stroke-width="1"/>
+        </defs>
+    </svg>
+
+    <table class="game-table">
+        <!-- Row 1 -->
+        <tr class="row-1">
+            <td class="label">Starting position:</td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+            <td></td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+        </tr>
+        <!-- Row 2 -->
+        <tr class="row-2">
+            <td class="label">Black moves ahead:</td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+            <td></td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+        </tr>
+        <!-- Row 3 -->
+        <tr class="row-3">
+            <td class="label">White jumps:</td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+            <td></td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+        </tr>
+        <!-- Row 4 -->
+        <tr class="row-4">
+            <td class="label">Black moves ahead:</td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+            <td></td>
+        </tr>
+        <!-- Row 5 -->
+        <tr class="row-5">
+            <td class="label">Black jumps:</td>
+            <td></td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+        </tr>
+        <!-- Row 6 -->
+        <tr class="row-6">
+            <td class="label">White moves ahead:</td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+            <td></td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+            <td><svg class="circle"><use href="#black-circle"/></svg></td>
+            <td><svg class="circle"><use href="#white-circle"/></svg></td>
+        </tr>
+    </table>
+
+</body>
+</html>
